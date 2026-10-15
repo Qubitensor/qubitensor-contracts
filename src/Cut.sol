@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
+// site: https://qubitensor.xyz   x: https://x.com/Qubitensor
+//
 // QUBITENSOR · TECHNICAL DIRECTIVE TD-04 · SUBNET 0: MAX-CUT
 //
 // 04.1 The graph. n nodes and 2n weighted edges. Edge e is read from 64 bits of keccak(seed, e / 4), starting at bit

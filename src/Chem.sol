@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
+// site: https://qubitensor.xyz   x: https://x.com/Qubitensor
+//
 // QUBITENSOR · TECHNICAL DIRECTIVE TD-05 · SUBNET 1: THE GROUND STATE
 //
 // 05.1 The magnet. q qubits, 6 to 8: H = sum over pairs J_ij Z_i Z_j + sum h_i X_i, every J_ij between -1 and 1 and

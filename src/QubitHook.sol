@@ -11,12 +11,12 @@ pragma solidity 0.8.26;
 //      price inside the spacing that begins at tick 207,240: about one ETH for the whole billion. In that same block the
 //      hook admits one deposit and no other: a single band from tick -887,220 up to 207,240, QBT only, carrying at least
 //      BAND_LIQUIDITY, which is what all 500,000,000 pool QBT add up to there. Until it lands nobody can trade. The position
-//      NFT goes straight to the locker (TD-07), which can only ever pay its LP fees to OWNER: the liquidity is locked for good.
+//      NFT goes straight to the vault keeper (TD-07), which can only ever pay its LP fees to OWNER: the liquidity is locked for good.
 // 02.3 The levy. 2% (FEE) of the ETH leg of each trade, from the very first trade on: no launch surcharge, no taper. It is
 //      cut from the ETH a trader names before the swap runs, and from the ETH that comes out of the swap otherwise. One
 //      half is OWNER's, one quarter feeds the Arena's prize pool, one quarter waits to buy QBT back and burn it. The pool's
-//      own 1% belongs to the position NFT. The hook's buybacks are not levied. In econ/econ_qbt.js OWNER's half and the
-//      pool's 1% together come to about 2 ETH a year at a quiet launch and about 20 at the largest launch on record.
+//      own 1% belongs to the position NFT. The hook's buybacks are not levied. In the launch's economic model OWNER's half and
+//      the pool's 1% together come to about 2 ETH a year at a quiet launch and about 20 at the largest launch on record.
 // 02.3a The platform fee. Every swap also pays PLATFORM_FEE (0.30%) of its gross native value to Programmable, once, with
 //      the accounting of Programmable's EthereumNative30HookV3: gross is the ETH that crosses including every fee here (a
 //      net amount is grossed up), the fee is ceil(gross x 0.30%) and is set aside first. It is minted as ETH claims to
@@ -29,7 +29,7 @@ pragma solidity 0.8.26;
 // 02.4 Paying out. Three calls anyone may make, each paying only where it says: `sendOwnerFee` to OWNER, `fundPrizes` to
 //      the Arena's prize pool, `buyback` into QBT that is then burned. A buyback spends at most BUYBACK_CAP_BPS (1%) of the
 //      ETH the pool holds in reserve at its current price, and only once per block: nudging the price by about 1% against
-//      3% in fees each way leaves nothing for anyone who brackets it with trades of their own (review/REVIEW.md measured a
+//      3.3% in fees each way leaves nothing for anyone who brackets it with trades of their own (a review measured a
 //      bracketing trader 2.05e14 wei down).
 // 02.5 Powers. The hook has no owner functions, no pause and no upgrade. Its settings are constants.
 

@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
+// site: https://qubitensor.xyz   x: https://x.com/Qubitensor
+//
 // QUBITENSOR · TECHNICAL DIRECTIVE TD-03 · THE RACE
 //
 // 03.1 Calendar. A round is one UTC day (block time / 86,400). Its two problems exist once somebody calls `open` that day,
@@ -35,7 +37,7 @@ pragma solidity 0.8.26;
 // 03.8 Limits, plainly. The chain cannot tell a quantum computer from a laptop: the solver label is the solver's own word.
 //      A solver may enter several different answers, and they only push others down where they score higher than every
 //      one of those others' own answers. Whoever lands `open` decides which block's prevrandao seeds the day; that buys no
-//      head start, since everyone gets the same problems for up to twenty hours (review/REVIEW.md, finding 2).
+//      head start, since everyone gets the same problems for up to twenty hours (review finding 2).
 // 03.9 Powers. None: no administrator, no pause, no upgrade, no adjustable setting.
 
 import {ReentrancyGuard} from "solady/src/utils/ReentrancyGuard.sol";
