@@ -20,7 +20,7 @@ pragma solidity 0.8.26;
 //      PAYOUT_BPS (20%) of the prize pool, half per subnet, and strikes the round's emission, half per subnet, both split
 //      70% / 20% / 10% over the three places. A place nobody earned pays nothing and strikes nothing, now or later.
 //      Measured in test/Gas.t.sol: a round with six new winners, each with stake behind it, costs about 0.83M gas to
-//      settle, so a full call of twelve came to 9,982,098, well under the 16,777,216 a transaction may use.
+//      settle, so a full call of twelve came to 9,989,210, well under the 16,777,216 a transaction may use.
 // 03.5 Emission. 250,000,000 QBT over the first 365 rounds, then half as much per round every further 365.
 // 03.6 Backers. Anyone may stake QBT behind a solver. Stake placed during round r takes part from round r + 1, so nothing
 //      staked once the answers are known can share in them. Each solver chooses the slice of its winnings that goes to
@@ -76,7 +76,7 @@ contract Arena is ReentrancyGuard {
     uint256 public constant MIN_QUBITS = 6;
     uint256 public constant MAX_QUBITS = 8;
     uint256 public constant QUBIT_STEP = 30;
-    uint256 public constant SETTLE_MAX = 12; // rounds per settle call: twelve of the costliest kind measured 9,982,098 gas
+    uint256 public constant SETTLE_MAX = 12; // rounds per settle call: twelve of the costliest kind measured 9,989,210 gas
     uint256 public constant SELF_SETTLE_MAX = 2; // rounds stake and setBackerShare clear themselves before asking for settle
     uint256 internal constant BPS = 10_000;
     uint256 internal constant ACC = 1e36;

@@ -8,7 +8,7 @@ midnight, and the contracts score every answer on chain. The best answers share 
 The token trades in one Uniswap v4 pool, ETH/QBT, whose hook takes the fees below.
 
 This is the source for the Programmable Custom Launch on Ethereum mainnet, compiled with solc 0.8.26+commit.8a97fa7a,
-viaIR, optimizer 200 runs, evmVersion cancun, metadata bytecodeHash none. These are exactly the files the seven standard
+viaIR, optimizer 1000 runs, evmVersion cancun, metadata bytecodeHash none. These are exactly the files the seven standard
 JSON inputs compile, byte for byte.
 
 ## Contracts
@@ -49,7 +49,7 @@ The liquidity can never be withdrawn. No contract has a function that removes it
 ## Measured on a mainnet fork
 
 - The whole launch through Programmable's real GraphFactory `0xB012...A887`, seven targets, `ignite` and the 0.02 ETH
-  first buy: 10,831,286 gas. The first buy got 18,618,636 QBT and paid exactly 60,000,000,000,000 wei of platform fee.
+  first buy: 11,432,179 gas. The first buy got 18,618,636 QBT and paid exactly 60,000,000,000,000 wei of platform fee.
 - The platform fee is exact to the wei in all four swap kinds (exact input and exact output, buys and sells), at
   0.003, 0.25 and 3 ETH, swapping straight against the PoolManager with no router.
 - A swap that names its ETH and is stopped short by its price limit reverts, buying or selling. A trade with no ETH in it
